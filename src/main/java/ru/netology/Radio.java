@@ -2,20 +2,21 @@ package ru.netology;
 
 public class Radio {
     private String name;
-    private int currentRadiostation;
+    private int currentRadioStation;
     private int volume;
 
-    public Radio() {
+    public void setCurrentRadioStation(int currentRadioStation) {
+        if (currentRadioStation > 9) {
+            return;
+        }
+        if (currentRadioStation < 0) {
+            return;
+        }
+        this.currentRadioStation = currentRadioStation;
     }
 
-    public void setCurrentRadiostation(int currentRadiostation) {
-        if (currentRadiostation > 9) {
-            return;
-        }
-        if (currentRadiostation < 0) {
-            return;
-        }
-        this.currentRadiostation = currentRadiostation;
+    public int getCurrentRadioStation() {
+        return currentRadioStation;
     }
 
     public void setVolume(int volume) {
@@ -28,20 +29,24 @@ public class Radio {
         this.volume = volume;
     }
 
-    public void nextRadiostation() {
-        if (currentRadiostation == 9) {
-            setCurrentRadiostation(0);
-            return;
-        }
-        setCurrentRadiostation(currentRadiostation + 1);
+    public int getVolume() {
+        return volume;
     }
 
-    public void prevRadiostation() {
-        if (currentRadiostation == 0) {
-            setCurrentRadiostation(9);
+    public void nextRadioStation() {
+        if (currentRadioStation == 9) {
+            setCurrentRadioStation(0);
             return;
         }
-        setCurrentRadiostation(currentRadiostation - 1);
+        setCurrentRadioStation(currentRadioStation + 1);
+    }
+
+    public void prevRadioStation() {
+        if (currentRadioStation == 0) {
+            setCurrentRadioStation(9);
+            return;
+        }
+        setCurrentRadioStation(currentRadioStation - 1);
     }
 
     public void increaseVolume() {
@@ -56,13 +61,5 @@ public class Radio {
             return;
         }
         setVolume(volume - 1);
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public int getCurrentRadiostation() {
-        return currentRadiostation;
     }
 }

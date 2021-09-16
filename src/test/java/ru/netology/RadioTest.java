@@ -15,10 +15,24 @@ class RadioTest {
     }
 
     @Test
+    public void shouldNextRadioStation1() {
+        radio.setCurrentRadioStation(1);
+        radio.nextRadioStation();
+        assertEquals(2, radio.getCurrentRadioStation());
+    }
+
+    @Test
     public void shouldPrevRadioStation() {
         radio.setCurrentRadioStation(0);
         radio.prevRadioStation();
         assertEquals(9, radio.getCurrentRadioStation());
+    }
+
+    @Test
+    public void shouldPrevRadioStation1() {
+        radio.setCurrentRadioStation(1);
+        radio.prevRadioStation();
+        assertEquals(0, radio.getCurrentRadioStation());
     }
 
     @Test
@@ -47,10 +61,24 @@ class RadioTest {
     }
 
     @Test
+    public void shouldIncreaseVolume1() {
+        radio.setVolume(1);
+        radio.increaseVolume();
+        assertEquals(2, radio.getVolume());
+    }
+
+    @Test
     public void shouldDecreaseVolume() {
         radio.setVolume(0);
         radio.decreaseVolume();
         assertEquals(0, radio.getVolume());
+    }
+
+    @Test
+    public void shouldDecreaseVolume1() {
+        radio.setVolume(3);
+        radio.decreaseVolume();
+        assertEquals(2, radio.getVolume());
     }
 
     @Test

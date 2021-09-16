@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.4.2</version>
+            <version>5.7.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -54,7 +54,6 @@
                     </execution>
                     <execution>
                         <id>check</id>
-                        <phase>verify</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -62,11 +61,6 @@
                             <rules>
                                 <rule>
                                     <element>METHOD</element>
-                                    <excludes>
-                                        <exclude>*Test</exclude>
-                                        <exclude>get*</exclude>
-                                        <exclude>set*</exclude>
-                                    </excludes>
                                     <limits>
                                         <limit>
                                             <counter>BRANCH</counter>

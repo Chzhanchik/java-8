@@ -22,8 +22,8 @@ class RadioTest {
 
     @Test
     public void shouldSelectingRadioStation() {
-        radio.setCurrentRadioStation(7);
-        assertEquals(7, radio.getCurrentRadioStation());
+        radio.setCurrentRadioStation(6);
+        assertEquals(6, radio.getCurrentRadioStation());
     }
 
     @Test

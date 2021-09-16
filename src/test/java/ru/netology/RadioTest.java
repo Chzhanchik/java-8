@@ -23,8 +23,8 @@ class RadioTest {
 
     @Test
     public void shouldSelectingRadioStation() {
-        radio.setCurrentRadioStation(6);
-        assertEquals(6, radio.getCurrentRadioStation());
+        radio.setCurrentRadioStation(5);
+        assertEquals(5, radio.getCurrentRadioStation());
     }
 
     @Test
